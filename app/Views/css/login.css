@@ -60,6 +60,16 @@ input[type="text"], input[type="password"] {
     color: white;
 }
 
+input[type="text"]:hover, input[type="password"]:hover{
+    background-color: rgb(36, 36, 36);
+}
+
+.line{
+    width: 75%;
+    border: none;
+    border-bottom: 2px solid rgb(175, 175, 175); /* Garis bawah */
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -84,11 +94,10 @@ button:hover {
     background-color: rgb(49, 49, 49); /* Darker color on hover */
 }
 
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px;
-    margin-top: auto;
-    width: 100%;
+.insert{
+    color: rgb(99, 99, 250);
+}
+
+.insert:hover{
+    color: rgb(129, 129, 255);
 }
