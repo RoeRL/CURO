@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
-   </head>
+</head>
 
 <body>
     <main>
         <div class="container">
-            <img src="property/logo.jpg" alt="">
-            <h2>Register</h2>
+            <img src="../../public/images/logo.jpg" alt="">
+            <h2>Halaman Login</h2>
             <form action="/login/auth" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required><br>
@@ -19,10 +19,10 @@
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br>
 
-                <button type="submit">Sign Up</button>
+                <button type="submit">Login</button>
             </form>
             <p class="line"></p>
-            <a href="login.html" class="insert">Sign In</a>
+            <a href="register.php" class="insert">Sign Up</a>
         </div>
     </main>
 
