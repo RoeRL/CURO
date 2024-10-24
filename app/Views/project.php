@@ -12,7 +12,7 @@
             <!-- Logo and App Menu -->
             <div class="navbar-left">
                 <div class="logo">
-                    <img src="property/logoB.jpg" alt="App Logo" />
+                    <img src="images/logoB.jpg" alt="App Logo" />
                     <span>CURO</span>
                 </div>
                 <div class="navbar-menu">
