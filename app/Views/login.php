@@ -10,9 +10,9 @@
 <body>
     <main>
         <div class="container">
-            <img src="../../public/images/logo.jpg" alt="">
+            <img src="images/logo.jpg" alt="">
             <h2>Halaman Login</h2>
-            <form action="/login/auth" method="post">
+            <form action="<?= base_url('/login/auth') ?>" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required><br>
 
