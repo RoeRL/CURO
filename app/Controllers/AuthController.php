@@ -12,13 +12,10 @@ class AuthController extends BaseController
         $db = db_connect();
         $this->userModel = new UserModel($db);
     }
-    public function login(){
-        return view('login');
-    }
+=======
+class AuthController extends BaseController
+{
 
-    public function register(){
-        return view('register');
-    }
 
     public function save()
     {

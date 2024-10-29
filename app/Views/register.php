@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../../public/css/login.css">
    </head>
 
 <body>
@@ -13,6 +14,9 @@
             <img src="images/logo.jpg" alt="">
             <h2>Register</h2>
             <form action="<?php echo base_url('/register/save'); ?>" method="post">
+            <img src="../../public/images/logo.jpg" alt="">
+            <h2>Register</h2>
+            <form action="/login/auth" method="post">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" required><br>
 
