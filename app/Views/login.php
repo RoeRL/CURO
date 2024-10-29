@@ -10,6 +10,9 @@
 <body>
     <main>
         <div class="container">
+            <img src="images/logo.jpg" alt="">
+            <h2>Halaman Login</h2>
+            <form action="<?= base_url('/login/auth') ?>" method="post">
             <img src="../../public/images/logo.jpg" alt="">
             <h2>Halaman Login</h2>
             <form action="/login/auth" method="post">
