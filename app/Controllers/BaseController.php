@@ -38,8 +38,8 @@ abstract class BaseController extends Controller
     protected $helpers = [];
 
     /**
-     * Be sure to declare properties for any property fetch you initialized.
-     * The creation of dynamic property is deprecated in PHP 8.2.
+     * Be sure to declare properties for any images fetch you initialized.
+     * The creation of dynamic images is deprecated in PHP 8.2.
      */
     // protected $session;
 
