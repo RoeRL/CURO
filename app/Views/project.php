@@ -112,7 +112,7 @@
 
         <!-- Main content (optional for your use) -->
         <main class="main-content">
-            <div class="container">
+            <div class="container-card">
                 <div class="card">
                     <h2>Front-End Job</h2>
                     <ul>
