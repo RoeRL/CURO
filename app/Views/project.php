@@ -61,7 +61,7 @@
                         <span>RS</span>
                     </div>
                     <div class="dropdown-content" id="userMenu">
-                        <a href="/profile">Profile</a>
+                        <a href="/profile/<?= session()->get('username') ?>">View Profile</a>
                         <a href="/settings">Settings</a>
                         <a href="/logout">Logout</a>  <!-- Logout Link -->
                     </div>

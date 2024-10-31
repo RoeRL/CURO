@@ -12,6 +12,7 @@ class UserModel extends Model
     protected $primaryKey = 'id';
     protected $allowedFields = ['username', 'password'];
     public function __construct(ConnectionInterface &$db) {
+        parent::__construct();
         $this->db =& $db;
     }
 

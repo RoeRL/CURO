@@ -19,6 +19,7 @@ $routes->post('/login/auth', 'AuthController::checkLogin');
 //Logout
 $routes->get('/logout', 'AuthController::logout');
 
-$routes->get('/(:any)', 'Home::index/$1');
+$routes->get('/', 'Home::index');
 
-//TODO: data per user, link per user DONE
+//User
+$routes->get('/profile/(:any)', 'UserController::index/$1');

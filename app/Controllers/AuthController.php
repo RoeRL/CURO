@@ -8,7 +8,6 @@ class AuthController extends BaseController
 {
     protected $userModel;
     public function __construct() {
-
         $db = db_connect();
         $this->userModel = new UserModel($db);
     }
@@ -18,11 +17,9 @@ class AuthController extends BaseController
         }
         return view('login');
     }
-
     public function register(){
         return view('register');
     }
-
     public function save()
     {
         $username = $this->request->getPost('username');
@@ -43,27 +40,22 @@ class AuthController extends BaseController
         }
     }
     public function checkLogin()
-    {
-        $username = $this->request->getVar('username');
-        $user = $this->userModel->getUserByUsername($username);
+{
+    $username = $this->request->getVar('username');
+    $user = $this->userModel->getUserByUsername($username);
 
-        if ($user) {
-            $password = $this->request->getVar('password');
-            if ($password == $user['password']) {
-                session()->set([
-                    'isLoggedIn' => true,
-                    'userId' => $user['id'],
-                    'username' => $user['username']
-                ]);
-                return redirect()->to('/' . $user['username']);
-            } else {
-                echo $password;
-                echo $user['password'];
-            }
-        } else {
-            echo 'User not found';
-        }
+    if ($user && $user['password'] == $this->request->getVar('password')) {
+        session()->set([
+            'isLoggedIn' => true,
+            'userId' => $user['id'],
+            'username' => $user['username']
+        ]);
+
+        return redirect()->to('/');
+    } else {
+        return redirect()->back()->with('error', 'Invalid credentials');
     }
+}
     public function logout()
     {
         session()->destroy(); // This destroys the session completely

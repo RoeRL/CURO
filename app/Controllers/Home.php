@@ -12,12 +12,13 @@ class Home extends BaseController
         $db = db_connect();
         $this->taskModel = new TaskModel($db);
     }
-    public function index($username)
-    {
+    public function index() {
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/login');
         }
-        return view('project', ['username' => $username]);
+        $username = session()->get('username');
+        $data = ['username' => $username];
+        return view('project', $data);
     }
     public function save()
     {
@@ -28,7 +29,7 @@ class Home extends BaseController
             'status' => $this->request->getPost('status')
         ];
         if ($this->taskModel->insertTask($data)) {
-            return redirect()->to('/success');
+            return redirect()->to('/');
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
         }
