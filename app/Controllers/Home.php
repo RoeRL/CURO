@@ -12,6 +12,9 @@ class Home extends BaseController
         $db = db_connect();
         $this->taskModel = new TaskModel($db);
     }
+    public function sprint(){
+        return view('sprint');
+    }
     public function index() {
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/login');

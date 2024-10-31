@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Navbar</title>
-    <link rel="stylesheet" href="css/project.css">
+    <link rel="stylesheet" href="css/sprint.css">
     </head>
 <body>
     <header>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <a href="/add-task" class="create-btn">Create</a>
-                    <a href="/sprint-view" class="create-btn">Sprint</a>
+                    <a href="/" class="create-btn">Board</a>
                 </div>
             </div>
             <!-- Search, Notifications -->
@@ -57,17 +57,8 @@
                     <span class="icon">🔔</span>
                     <span class="badge">8</span>
                 </div>
-                <div class="dropdown">
-                    <div class="user-icon" onclick="toggleUserMenu()">
-                        <span>RS</span>
-                    </div>
-                    <div class="dropdown-content" id="userMenu">
-
-                        <a href="/profile/<?= session()->get('username') ?>">View Profile</a>
-
-                        <a href="/settings">Settings</a>
-                        <a href="/logout">Logout</a>  <!-- Logout Link -->
-                    </div>
+                <div class="user-icon">
+                    <span>RS</span>
                 </div>
            </div>
         </nav>
@@ -118,30 +109,83 @@
             <div class="premium-section">
                 <button class="premium-btn">Try Premium free</button>
             </div>
-            
-
         </aside>
 
         <!-- Main content (optional for your use) -->
         <main class="main-content">
-            <div class="container-card">
-                <div class="card">
-                    <h2>Front-End Job</h2>
-                    <ul>
-                        <li>View Register</li>
-                        <li>View Login</li>
-                        <li>View Fitur</li>
-                    </ul>
+            <nav class="nav-main">
+                <div class="nav-main-left">
+                    <div class="logo">
+                        <img src="images/logo.jpg" alt="App Logo" />
+                        <span>Project 1</span>
+                    </div>
                 </div>
-                <div class="card">
-                    <h2>Back-End Job</h2>
-                    <ul>
-                        <li>content DB</li>
-                        <li>Control</li>
-                        <li>40% Beres, sisa manipulasi data</li>
-                    </ul>
+                <div class="nav-main-right">
+                    <button class="create-btn">Sprint</button>
+                    <span class="menu-dots">⋮</span>
+                </div>             
+            </nav>
+            <div class="sprint-container">
+                <div class="sprint-header">
+                    <h3>Sprint 1 (10/28 - 11/10)</h3>
+                    <span class="menu-dots">⋮</span>
                 </div>
+            
+                <div class="task-group in-progress">
+                    <div class="task-group-header">
+                        <span class="status-label">IN PROGRESS</span>
+                        <span class="task-count">1</span>
+                        <button class="add-task-btn">+ Add Task</button>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-name">
+                            <span class="icon">🔵</span>
+                            <span>Pembuatan LPJ</span>
+                        </div>
+                        <div class="task-due-date">Yesterday</div>
+                        <div class="task-priority urgent">Urgent</div>
+                        <span class="menu-dots">⋮</span>
+                    </div>
+                </div>
+            
+                <div class="task-group to-do">
+                    <div class="task-group-header">
+                        <span class="status-label">TO DO</span>
+                        <span class="task-count">3</span>
+                        <button class="add-task-btn">+ Add Task</button>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-name">
+                            <input type="checkbox">
+                            <span>Tanda Tangan Proposal</span>
+                        </div>
+                        <div class="task-due-date">--</div>
+                        <div class="task-priority">Urgent</div>
+                        <span class="menu-dots">⋮</span>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-name">
+                            <input type="checkbox">
+                            <span>Selia LPJ Sekkab</span>
+                        </div>
+                        <div class="task-due-date">--</div>
+                        <div class="task-priority">--</div>
+                        <span class="menu-dots">⋮</span>
+                    </div>
+                    <div class="task-item">
+                        <div class="task-name">
+                            <input type="checkbox">
+                            <span>Selia LPJ Dalkam</span>
+                        </div>
+                        <div class="task-due-date">--</div>
+                        <div class="task-priority">--</div>
+                        <span class="menu-dots">⋮</span>
+                    </div>
+                </div>                             
             </div>
+            <div class="create-sprint-container">
+                <button class="create-sprint-btn">+ Create New Sprint</button>
+            </div>           
         </main>
     </div>
 </body>
