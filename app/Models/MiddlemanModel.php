@@ -5,7 +5,7 @@ namespace App\Models;
 use CodeIgniter\Model;
 use CodeIgniter\Database\ConnectionInterface;
 
-class TaskModel extends Model
+class MiddlemanModel extends Model
 {
     protected $db;
     protected $table = 'tasks';
@@ -21,14 +21,18 @@ class TaskModel extends Model
             ->insert($data);
     }
 
-    public function getTaskId($task)
+    public function getTaskId($userId)
     {
-        return $this->asArray()
-            ->where(['title' => $task])
+        return $this->select('taskId')
+            ->asArray()
+            ->where(['userId' => $userId])
             ->first();
     }
-    public function insertTask($data)
+    public function getUserId($taskId)
     {
-        return $this->insert($data);
+        return $this->select('userId')
+            ->asArray()
+            ->where(['taskId' => $taskId])
+            ->first();
     }
 }

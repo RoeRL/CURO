@@ -27,4 +27,10 @@ class UserModel extends Model
             ->where(['username' => $username])
             ->first();
     }
+    public function getIdByUsername($username){
+        return $this->select('id')
+            ->asArray()
+            ->where(['username' => $username])
+            ->first();
+    }
 }

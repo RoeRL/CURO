@@ -56,8 +56,15 @@
                     <span class="icon">🔔</span>
                     <span class="badge">8</span>
                 </div>
-                <div class="user-icon">
-                    <span>RS</span>
+                <div class="dropdown">
+                    <div class="user-icon" onclick="toggleUserMenu()">
+                        <span>RS</span>
+                    </div>
+                    <div class="dropdown-content" id="userMenu">
+                        <a href="/profile">Profile</a>
+                        <a href="/settings">Settings</a>
+                        <a href="/logout">Logout</a>  <!-- Logout Link -->
+                    </div>
                 </div>
            </div>
         </nav>
@@ -108,6 +115,8 @@
             <div class="premium-section">
                 <button class="premium-btn">Try Premium free</button>
             </div>
+            
+
         </aside>
 
         <!-- Main content (optional for your use) -->

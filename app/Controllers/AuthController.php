@@ -13,6 +13,9 @@ class AuthController extends BaseController
         $this->userModel = new UserModel($db);
     }
     public function login(){
+        if (session()->has('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
         return view('login');
     }
 
@@ -52,7 +55,7 @@ class AuthController extends BaseController
                     'userId' => $user['id'],
                     'username' => $user['username']
                 ]);
-                return redirect()->to('/');
+                return redirect()->to('/' . $user['username']);
             } else {
                 echo $password;
                 echo $user['password'];
