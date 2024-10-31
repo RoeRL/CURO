@@ -78,11 +78,13 @@ body {
 }
 
 .create-btn {
+    display: inline-block; /* Allows the use of padding and width */
     background-color: #666;
     border: none;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
+    text-decoration: none; /* Removes underline from links */
     cursor: pointer;
 }
 
@@ -333,4 +335,43 @@ body {
 
 .navbar-right .workspace-dropdown {
     position: relative;
+}
+
+.container-card {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    height: fit-content;
+}
+
+/* Card styling */
+.card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 15px;
+    margin-right: 20px;
+    height: fit-content;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.card h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+
+}
+
+.card ul {
+    list-style: none;
+}
+
+.card ul li {
+    padding: 8px 0;
+    border-bottom: 1px solid #444;
+}
+
+.card ul li:last-child {
+    border-bottom:none;
 }

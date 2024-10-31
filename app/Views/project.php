@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <button href="" class="create-btn">Create</button>
+                    <a href="/add-task" class="create-btn">Create</a>
                 </div>
             </div>
             <!-- Search, Notifications -->
@@ -112,7 +112,24 @@
 
         <!-- Main content (optional for your use) -->
         <main class="main-content">
-            <!-- Content goes here -->
+            <div class="container-card">
+                <div class="card">
+                    <h2>Front-End Job</h2>
+                    <ul>
+                        <li>View Register</li>
+                        <li>View Login</li>
+                        <li>View Fitur</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h2>Back-End Job</h2>
+                    <ul>
+                        <li>content DB</li>
+                        <li>Control</li>
+                        <li>40% Beres, sisa manipulasi data</li>
+                    </ul>
+                </div>
+            </div>
         </main>
     </div>
 </body>
