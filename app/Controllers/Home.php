@@ -12,12 +12,14 @@ class Home extends BaseController
         $db = db_connect();
         $this->taskModel = new TaskModel($db);
     }
-    public function index($username)
-    {
+    public function index() {
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/login');
         }
-        return view('project', ['username' => $username]);
+        $username = session()->get('username');
+        $data = ['username' => $username];
+        return view('project', $data);
+
     }
     public function save()
     {
@@ -28,33 +30,14 @@ class Home extends BaseController
             'status' => $this->request->getPost('status')
         ];
         if ($this->taskModel->insertTask($data)) {
-            return redirect()->to('/success');
+            return redirect()->to('/');
+
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
         }
     }
     public function addTask(){
         return view("add_task");
-    }
-    public function save()
-    {
-        $title = $this->request->getPost('title');
-        $description = $this->request->getPost('description');
-        $deadline = $this->request->getPost('deadline');
-        $status = $this->request->getPost('status');
 
-
-        $data = [
-            'title'        => $title,
-            'description'  => $description,
-            'deadline'     => $deadline,
-            'status'       => $status,
-        ];
-
-        $result = $this->taskModel->add($data);
-        if (! $result) echo "something went wrong";
-    }
-    public function addTask(){
-        return view("add_task");
     }
 }

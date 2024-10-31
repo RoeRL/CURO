@@ -10,7 +10,6 @@ $routes->get('/add-task', 'Home::addTask');
 $routes->post('/add-task/save', 'Home::save');
 
 
-
 //Route Login dan Register
 $routes->get('/login', 'AuthController::login');
 $routes->get('/register', 'AuthController::register');
@@ -20,5 +19,7 @@ $routes->post('/login/auth', 'AuthController::checkLogin');
 //Logout
 $routes->get('/logout', 'AuthController::logout');
 
-$routes->get('/(:any)', 'Home::index/$1');
+$routes->get('/', 'Home::index');
 
+//User
+$routes->get('/profile/(:any)', 'UserController::index/$1');
