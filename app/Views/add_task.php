@@ -40,6 +40,7 @@
                 </div>
                 <div class="form-group">
                     <button type="submit">Save Task</button>
+                    <?= csrf_field() ?>
                 </div>
             </form>
         </div>

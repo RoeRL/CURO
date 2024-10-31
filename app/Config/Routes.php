@@ -7,6 +7,7 @@ use CodeIgniter\Router\RouteCollection;
  */
 //Home
 $routes->get('/add-task', 'Home::addTask');
+$routes->post('/add-task/save', 'Home::save');
 
 
 //Route Login dan Register

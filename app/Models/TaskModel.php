@@ -27,4 +27,8 @@ class TaskModel extends Model
             ->where(['title' => $task])
             ->first();
     }
+    public function insertTask($data)
+    {
+        return $this->insert($data);
+    }
 }
