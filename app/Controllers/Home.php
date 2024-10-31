@@ -22,6 +22,7 @@ class Home extends BaseController
         $username = session()->get('username');
         $data = ['username' => $username];
         return view('project', $data);
+
     }
     public function save()
     {
@@ -33,11 +34,13 @@ class Home extends BaseController
         ];
         if ($this->taskModel->insertTask($data)) {
             return redirect()->to('/');
+
         } else {
             return redirect()->back()->with('error', 'Something went wrong');
         }
     }
     public function addTask(){
         return view("add_task");
+
     }
 }
