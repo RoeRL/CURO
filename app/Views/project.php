@@ -44,7 +44,7 @@
                             </div>
                         </div>
                     </div>
-                    <button href="" class="create-btn">Create</button>
+                    <a href="/add-task" class="create-btn">Create</a>
                 </div>
             </div>
             <!-- Search, Notifications -->

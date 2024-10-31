@@ -78,11 +78,13 @@ body {
 }
 
 .create-btn {
+    display: inline-block; /* Allows the use of padding and width */
     background-color: #666;
     border: none;
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
+    text-decoration: none; /* Removes underline from links */
     cursor: pointer;
 }
 
