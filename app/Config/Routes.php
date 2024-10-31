@@ -10,7 +10,6 @@ $routes->get('/add-task', 'Home::addTask');
 $routes->post('/add-task/save', 'Home::save');
 $routes->get('/sprint-view','Home::sprint');
 
-
 //Route Login dan Register
 $routes->get('/login', 'AuthController::login');
 $routes->get('/register', 'AuthController::register');
