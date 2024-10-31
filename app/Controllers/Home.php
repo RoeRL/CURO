@@ -5,12 +5,12 @@ namespace App\Controllers;
 class Home extends BaseController
 {
     protected $taskModel;
-    public function index()
+    public function index($username)
     {
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/login');
         }
-        return view('project');
+        return view('project', ['username' => $username]);
     }
     public function save()
     {
