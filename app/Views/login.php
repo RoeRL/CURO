@@ -8,29 +8,26 @@
 </head>
 
 <body>
-    <main>
-        <div class="container">
-            <img src="images/logo.jpg" alt="">
-            <h2>Halaman Login</h2>
-            <form action="<?= base_url('/login/auth') ?>" method="post">
-            <img src="../../public/images/logo.jpg" alt="">
-            <h2>Halaman Login</h2>
-            <form action="/login/auth" method="post">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required><br>
+<main>
+    <div class="container">
+        <img src="images/logo.jpg" alt="">
+        <h2>Halaman Login</h2>
+        <form action="<?= base_url('/login/auth') ?>" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br>
 
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
 
-                <button type="submit">Login</button>
-            </form>
-            <p class="line"></p>
-            <a href="register.php" class="insert">Sign Up</a>
-        </div>
-    </main>
+            <button type="submit">Login</button>
+        </form>
+        <p class="line"></p>
+        <a href="/register" class="insert">Sign Up</a>
+    </div>
+</main>
 
-    <!-- <footer>
-        <p>&copy; 2024 - My CodeIgniter App</p>
-    </footer> -->
+<!-- <footer>
+    <p>&copy; 2024 - My CodeIgniter App</p>
+</footer> -->
 </body>
 </html>

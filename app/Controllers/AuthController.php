@@ -12,21 +12,23 @@ class AuthController extends BaseController
         $db = db_connect();
         $this->userModel = new UserModel($db);
     }
-=======
-class AuthController extends BaseController
-{
+    public function login(){
+        return view('login');
+    }
 
+    public function register(){
+        return view('register');
+    }
 
     public function save()
     {
         $username = $this->request->getPost('username');
         $password      = $this->request->getPost('password');
 
-        $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
         $data = [
             'username'        => $username,
-            'password'         => $passwordHash,
+            'password'         => $password,
         ];
 
         $result = $this->userModel->add($data);
@@ -44,13 +46,24 @@ class AuthController extends BaseController
 
         if ($user) {
             $password = $this->request->getVar('password');
-            if (password_verify($password, $user['password'])) {
+            if ($password == $user['password']) {
+                session()->set([
+                    'isLoggedIn' => true,
+                    'userId' => $user['id'],
+                    'username' => $user['username']
+                ]);
                 return redirect()->to('/');
             } else {
-                echo 'Login failed';
+                echo $password;
+                echo $user['password'];
             }
         } else {
             echo 'User not found';
         }
+    }
+    public function logout()
+    {
+        session()->destroy(); // This destroys the session completely
+        return redirect()->to('/login');
     }
 }
