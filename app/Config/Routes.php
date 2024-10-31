@@ -8,6 +8,7 @@ use CodeIgniter\Router\RouteCollection;
 //Home
 $routes->get('/add-task', 'Home::addTask');
 $routes->post('/add-task/save', 'Home::save');
+$routes->get('/sprint-view','Home::sprint');
 
 
 //Route Login dan Register

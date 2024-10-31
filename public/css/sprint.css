@@ -10,6 +10,7 @@ body {
     /* color: white; */
 }
 
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -341,41 +342,146 @@ body {
     position: relative;
 }
 
-.container-card {
+/* Project Navigation Bar in Main Content */
+.nav-main {
     display: flex;
-    flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
-    height: fit-content;
-}
-
-/* Card styling */
-.card {
-    background-color: #333;
-    border-radius: 8px;
-    padding: 15px;
-    margin-right: 20px;
-    height: fit-content;
-    width: 200px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    align-items: center;
+    background-color: #424141; /* Dark gray background */
+    padding: 10px 20px;
+    height: 60px;
+    border-bottom: 1px solid #333;
+    width: 100%; /* Make it full-width */
+    margin: 0; /* Remove any default margin */
     color: white;
 }
 
-.card h2 {
+/* Logo inside Project Navigation Bar */
+.nav-main .logo {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.nav-main-right {
+    display: flex;
+    align-items: center;
+}
+
+.menu-dots {
+    font-size: 24px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+.nav-main .logo img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
+
+.main-content {
+    flex: 1;
+    padding: 0;
+    width: 100%;
+}
+
+.sprint-container {
+    color: #e0e0e0;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-top: 20px;
+    border: 1px solid #424141; /* Border ditambahkan */
+}
+
+.sprint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.task-group {
+    margin-top: 15px;
+}
+
+.task-group-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     margin-bottom: 10px;
-
 }
 
-.card ul {
-    list-style: none;
+.status-label {
+    background-color: #954fff;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-.card ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid #444;
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #424141;
+    border-radius: 5px;
+    margin-bottom: 5px;
 }
 
-.card ul li:last-child {
-    border-bottom:none;
+.task-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.task-due-date {
+    color: #ff6b6b;
+}
+
+.task-priority {
+    color: #ff6b6b;
+}
+
+.urgent {
+    color: #ff6b6b;
+    font-weight: bold;
+}
+
+.menu-dots {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.add-task-btn {
+    background-color: transparent;
+    color: #954fff;
+    border: none;
+    cursor: pointer;
+}
+
+.create-sprint-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.create-sprint-btn {
+    background-color: #954fff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.create-sprint-btn:hover {
+    background-color: #b889ff;
 }
