@@ -12,15 +12,29 @@ class Home extends BaseController
         $db = db_connect();
         $this->taskModel = new TaskModel($db);
     }
-    public function sprint(){
-        return view('sprint');
+    public function sprintView() {
+        if (!session()->has('isLoggedIn')) {
+            return redirect()->to('/login');
+        }
+        $userId = session()->get('userId');
+
+        $tasks = $this->taskModel->getAllTasks($userId);
+        $data = [
+            'pendingTasks' => array_filter($tasks, function ($task) { return $task['status'] === 'pending'; }),
+            'onHoldTasks' => array_filter($tasks, function ($task) { return $task['status'] === 'on_hold'; }),
+            'completedTasks' => array_filter($tasks, function ($task) { return $task['status'] === 'completed'; })
+        ];
+        return view('sprint', $data);
     }
     public function index() {
         if (!session()->has('isLoggedIn')) {
             return redirect()->to('/login');
         }
         $username = session()->get('username');
-        $data = ['username' => $username];
+        $userId = session()->get('userId');
+
+        $tasks = $this->taskModel->getAllTasks($userId);
+        $data = ['username' => $username, 'tasks' => $tasks];
         return view('project', $data);
 
     }
@@ -30,7 +44,8 @@ class Home extends BaseController
             'title' => $this->request->getPost('title'),
             'description' => $this->request->getPost('description'),
             'deadline' => $this->request->getPost('deadline'),
-            'status' => $this->request->getPost('status')
+            'status' => $this->request->getPost('status'),
+            'userId' => session()->get('userId')
         ];
         if ($this->taskModel->insertTask($data)) {
             return redirect()->to('/');
@@ -43,4 +58,5 @@ class Home extends BaseController
         return view("add_task");
 
     }
+
 }

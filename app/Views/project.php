@@ -125,22 +125,20 @@
         <!-- Main content (optional for your use) -->
         <main class="main-content">
             <div class="container-card">
-                <div class="card">
-                    <h2>Front-End Job</h2>
-                    <ul>
-                        <li>View Register</li>
-                        <li>View Login</li>
-                        <li>View Fitur</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h2>Back-End Job</h2>
-                    <ul>
-                        <li>content DB</li>
-                        <li>Control</li>
-                        <li>40% Beres, sisa manipulasi data</li>
-                    </ul>
-                </div>
+                <?php if (!empty($tasks)): ?>
+                    <?php foreach ($tasks as $task): ?>
+                        <div class="card">
+                            <h2><?= esc($task['title']); ?></h2>
+                            <ul>
+                                <li>Description: <?= esc($task['description']); ?></li>
+                                <li>Deadline: <?= esc($task['deadline']); ?></li>
+                                <li>Status: <?= esc($task['status']); ?></li>
+                            </ul>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>No tasks available.</p>
+                <?php endif; ?>
             </div>
         </main>
     </div>
