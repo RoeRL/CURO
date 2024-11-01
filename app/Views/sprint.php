@@ -123,69 +123,72 @@
                 <div class="nav-main-right">
                     <button class="create-btn">Sprint</button>
                     <span class="menu-dots">⋮</span>
-                </div>             
+                </div>
             </nav>
             <div class="sprint-container">
-                <div class="sprint-header">
-                    <h3>Sprint 1 (10/28 - 11/10)</h3>
-                    <span class="menu-dots">⋮</span>
-                </div>
-            
-                <div class="task-group in-progress">
+                <!-- Pending Tasks -->
+                <div class="task-group pending">
                     <div class="task-group-header">
-                        <span class="status-label">IN PROGRESS</span>
-                        <span class="task-count">1</span>
+                        <span class="status-label">PENDING</span>
+                        <span class="task-count"><?= count($pendingTasks); ?></span>
                         <button class="add-task-btn">+ Add Task</button>
                     </div>
-                    <div class="task-item">
-                        <div class="task-name">
-                            <span class="icon">🔵</span>
-                            <span>Pembuatan LPJ</span>
+                    <?php foreach ($pendingTasks as $task): ?>
+                        <div class="task-item">
+                            <div class="task-name">
+                                <span class="icon">🔵</span>
+                                <span><?= esc($task['title']); ?></span>
+                            </div>
+                            <div class="task-due-date"><?= esc($task['deadline']); ?></div>
+                            <div class="task-priority"><?= esc($task['status']); ?></div>
+                            <span class="menu-dots">⋮</span>
                         </div>
-                        <div class="task-due-date">Yesterday</div>
-                        <div class="task-priority urgent">Urgent</div>
-                        <span class="menu-dots">⋮</span>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
-            
-                <div class="task-group to-do">
+
+                <!-- On Hold Tasks -->
+                <div class="task-group on-hold">
                     <div class="task-group-header">
-                        <span class="status-label">TO DO</span>
-                        <span class="task-count">3</span>
+                        <span class="status-label">ON HOLD</span>
+                        <span class="task-count"><?= count($onHoldTasks); ?></span>
                         <button class="add-task-btn">+ Add Task</button>
                     </div>
-                    <div class="task-item">
-                        <div class="task-name">
-                            <input type="checkbox">
-                            <span>Tanda Tangan Proposal</span>
+                    <?php foreach ($onHoldTasks as $task): ?>
+                        <div class="task-item">
+                            <div class="task-name">
+                                <span class="icon">🟠</span>
+                                <span><?= esc($task['title']); ?></span>
+                            </div>
+                            <div class="task-due-date"><?= esc($task['deadline']); ?></div>
+                            <div class="task-priority"><?= esc($task['status']); ?></div>
+                            <span class="menu-dots">⋮</span>
                         </div>
-                        <div class="task-due-date">--</div>
-                        <div class="task-priority">Urgent</div>
-                        <span class="menu-dots">⋮</span>
+                    <?php endforeach; ?>
+                </div>
+
+                <!-- Completed Tasks -->
+                <div class="task-group completed">
+                    <div class="task-group-header">
+                        <span class="status-label">COMPLETED</span>
+                        <span class="task-count"><?= count($completedTasks); ?></span>
+                        <button class="add-task-btn">+ Add Task</button>
                     </div>
-                    <div class="task-item">
-                        <div class="task-name">
-                            <input type="checkbox">
-                            <span>Selia LPJ Sekkab</span>
+                    <?php foreach ($completedTasks as $task): ?>
+                        <div class="task-item">
+                            <div class="task-name">
+                                <span class="icon">🟢</span>
+                                <span><?= esc($task['title']); ?></span>
+                            </div>
+                            <div class="task-due-date"><?= esc($task['deadline']); ?></div>
+                            <div class="task-priority"><?= esc($task['status']); ?></div>
+                            <span class="menu-dots">⋮</span>
                         </div>
-                        <div class="task-due-date">--</div>
-                        <div class="task-priority">--</div>
-                        <span class="menu-dots">⋮</span>
-                    </div>
-                    <div class="task-item">
-                        <div class="task-name">
-                            <input type="checkbox">
-                            <span>Selia LPJ Dalkam</span>
-                        </div>
-                        <div class="task-due-date">--</div>
-                        <div class="task-priority">--</div>
-                        <span class="menu-dots">⋮</span>
-                    </div>
-                </div>                             
+                    <?php endforeach; ?>
+                </div>
             </div>
             <div class="create-sprint-container">
                 <button class="create-sprint-btn">+ Create New Sprint</button>
-            </div>           
+            </div>
         </main>
     </div>
 </body>

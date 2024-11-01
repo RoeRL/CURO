@@ -23,7 +23,7 @@ class AuthController extends BaseController
     public function save()
     {
         $username = $this->request->getPost('username');
-        $password      = $this->request->getPost('password');
+        $password = $this->request->getPost('password');
 
 
         $data = [
